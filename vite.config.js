@@ -32,7 +32,7 @@ export default defineConfig({
       input: './index.html',
       external: [],
     },
-    outDir: 'build',
+    outDir: 'dist',
     sourcemap: true,
   },
   define: {

@@ -9,10 +9,13 @@ node_modules/
 
 # Development
 .env
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Keep these files for environment configuration
+# .env.local (for local development)
+# .env.production (for production deployment)
 
 # IDE and editors
 .vscode/
