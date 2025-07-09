@@ -30,10 +30,18 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: './index.html',
-      external: [],
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          charts: ['chart.js', 'react-chartjs-2', 'recharts'],
+          ui: ['framer-motion', '@tippyjs/react', 'react-select']
+        }
+      }
     },
-    outDir: 'dist',
+    outDir: 'build',
     sourcemap: true,
+    chunkSizeWarningLimit: 600,
   },
   define: {
     // Replace process.env with import.meta.env for Vite
