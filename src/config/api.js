@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 // Environment-based API configuration
 const getApiConfig = () => {
   const env = import.meta.env.VITE_ENVIRONMENT || import.meta.env.MODE;
@@ -20,6 +22,44 @@ const getApiConfig = () => {
 };
 
 const config = getApiConfig();
+
+// Axios instance oluştur
+export const api = axios.create({
+  baseURL: 'http://localhost:5000/api',
+  withCredentials: true,
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
+console.log('API BaseURL set to: http://localhost:5000/api');
+
+// Request interceptor - token ekleme
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    console.log('API Request:', config.method?.toUpperCase(), config.url);
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// Response interceptor - hata yönetimi
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      localStorage.removeItem('token');
+      window.location.href = '/login';
+    }
+    return Promise.reject(error);
+  }
+);
 
 export const API_BASE = config.API_BASE;
 export const BASE_URL = config.BASE_URL;

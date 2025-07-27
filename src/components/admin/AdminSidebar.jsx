@@ -10,7 +10,8 @@ import {
   FaCog,
   FaFileAlt,
   FaChartLine,
-  FaList
+  FaList,
+  FaBug
 } from "react-icons/fa";
 
 const navItems = [
@@ -22,6 +23,7 @@ const navItems = [
   { path: "/admin/analytics", label: "Analytics", icon: <FaChartLine /> },
   { path: "/admin/settings", label: "Settings", icon: <FaCog /> },
   { path: "/admin/logs", label: "System Logs", icon: <FaFileAlt /> },
+  { path: "/admin/error-logs", label: "Error Logs", icon: <FaBug /> },
 ];
 
 const AdminSidebar = ({ collapsed, setCollapsed, activeModule }) => {

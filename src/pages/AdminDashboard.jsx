@@ -12,6 +12,7 @@ import Analytics from "../components/admin/Analytics";
 import EditGameDetail from "../components/admin/EditGameDetail";
 import AdminSettings from "../components/admin/AdminSettings";
 import AdminLogs from "../components/admin/AdminLogs";
+import ErrorLogs from "../components/admin/ErrorLogs";
 import SectionOrderingPage from "./admin/SectionOrderingPage";
 import { useUser } from "../context/UserContext";
 import { SectionLoader } from "../components/common/PageTransition";
@@ -159,6 +160,7 @@ const AdminDashboard = () => {
                   <Route path="section-ordering" element={<SectionOrderingPage />} />
                   <Route path="settings" element={<AdminSettings />} />
                   <Route path="logs" element={<AdminLogs />} />
+                  <Route path="error-logs" element={<ErrorLogs />} />
                 </Routes>
               </motion.div>
             </AnimatePresence>
