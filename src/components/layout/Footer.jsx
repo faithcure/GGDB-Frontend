@@ -43,23 +43,23 @@ const Footer = () => {
         {/* Link grubu */}
         <div className="flex flex-wrap justify-center gap-6 text-gray-400 text-sm">
           {[
-            "Help",
-            "Site Index",
-            "GGDB Pro",
-            "API",
-            "Press Room",
-            "Advertising",
-            "Jobs",
-            "Conditions of Use",
-            "Privacy Policy",
-            "Your Ads Privacy Choices",
+            { name: "Help", url: "/help" },
+            { name: "Site Index", url: "/site-index" },
+            { name: "GGDB Pro", url: "/pro" },
+            { name: "API", url: "/api" },
+            { name: "Press Room", url: "/press" },
+            { name: "Advertising", url: "/advertising" },
+            { name: "Jobs", url: "/jobs" },
+            { name: "Conditions of Use", url: "/terms" },
+            { name: "Privacy Policy", url: "/privacy" },
+            { name: "Your Ads Privacy Choices", url: "/ads-privacy" },
           ].map((item, i) => (
             <a
               key={i}
-              href="#"
+              href={item.url}
               className="hover:text-teal-400 transition-colors"
             >
-              {item}
+              {item.name}
             </a>
           ))}
         </div>

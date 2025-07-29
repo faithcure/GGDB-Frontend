@@ -55,6 +55,16 @@ import RequireAuth from "./components/protected/RequireAuth";
 import RequireAdmin from "./components/protected/RequireAdmin";
 import CompleteProfilePage from "./pages/CompleteProfilePage";
 
+// 🆕 Footer Pages
+import HelpPage from "./pages/HelpPage";
+import SiteIndexPage from "./pages/SiteIndexPage";
+import GGDBProPage from "./pages/GGDBProPage";
+import APIPage from "./pages/APIPage";
+import PressRoomPage from "./pages/PressRoomPage";
+import AdvertisingPage from "./pages/AdvertisingPage";
+import JobsPage from "./pages/JobsPage";
+import AdsPrivacyPage from "./pages/AdsPrivacyPage";
+
 // 🧠 Global User Context
 import { UserProvider } from "./context/UserContext";
 import { NotificationProvider } from "./context/NotificationContext";
@@ -124,6 +134,17 @@ const AppContent = () => {
               <Route path="/search" element={<SearchResultsPage />} />
               <Route path="/find-friends" element={<FindFriendsPage />} />
               <Route path="/connections" element={<ConnectionsPage />} />
+              
+              {/* 🆕 Footer Pages */}
+              <Route path="/help" element={<HelpPage />} />
+              <Route path="/site-index" element={<SiteIndexPage />} />
+              <Route path="/pro" element={<GGDBProPage />} />
+              <Route path="/api" element={<APIPage />} />
+              <Route path="/press" element={<PressRoomPage />} />
+              <Route path="/advertising" element={<AdvertisingPage />} />
+              <Route path="/jobs" element={<JobsPage />} />
+              <Route path="/ads-privacy" element={<AdsPrivacyPage />} />
+              
               {/* 🌍 Public Gamer Dashboard - accessible to all */}
               <Route path="/gamer/:username" element={<GamerDashboard />} />
               <Route path="/dashboard/:username?" element={<GamerDashboard />} />
